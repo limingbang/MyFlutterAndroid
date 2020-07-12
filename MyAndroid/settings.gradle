@@ -1,0 +1,13 @@
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  '../flutter_mine_module/.android/include_flutter.groovy'
+))
+rootProject.name = "MyAndroid"
+
+include ':flutter_mine_module'
+project(':flutter_mine_module').projectDir = new File('../flutter_mine_module')
+
+include ':flutter_mine_module'
+project(':flutter_mine_module').projectDir = new File('../flutter_mine_module')
